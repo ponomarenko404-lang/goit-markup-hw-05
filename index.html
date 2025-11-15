@@ -54,7 +54,9 @@
       <section class="section color">
         <div class="container section-one">
           <h1 class="page-title">Effective Solutions for Your Business</h1>
-          <button class="service-button" type="button">Order Service</button>
+          <button class="service-button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!--Advantages-->
@@ -445,5 +447,39 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop" data-modal>
+      <div class="modal">
+        <button class="close-btn" type="button" data-modal-close></button>
+        <p>Leave your contacts and we will call you back</p>
+        <form>
+          <div>
+            <label for="username">Name</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="usertel">Phone</label>
+            <input type="tel" />
+          </div>
+          <div>
+            <label for="useremail">Email</label>
+            <input type="email" />
+          </div>
+          <div>
+            <label for="useremail">Comment</label>
+            <textarea placeholder="Text input"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" />
+            <label span
+              >I accept the terms and conditions of the
+              <a href="">Privacy Policy</a>
+            </label>
+          </div>
+          <button class="service-button" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
