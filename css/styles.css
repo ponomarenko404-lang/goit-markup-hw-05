@@ -213,7 +213,7 @@ section #1
 .service-button {
   border: none;
   display: block;
-  margin: o;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
   min-width: 169px;
@@ -228,7 +228,6 @@ section #1
   cursor: pointer;
   letter-spacing: 0.04em;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .service-button:hover,
 .service-button:focus {
@@ -551,6 +550,36 @@ end footer
 backdrop
 =============*/
 
+/*============general backdrop styles=============*/
+label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+input {
+  padding-left: 38px;
+  font-family: inherit;
+}
+textarea {
+  padding-top: 8px;
+  padding-left: 16px;
+  color: #8e8f99;
+  height: 120px;
+}
+textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+/*============end general backdrop styles=============*/
+
 .backdrop {
   opacity: 0;
   visibility: hidden;
@@ -571,6 +600,8 @@ backdrop
 }
 
 .modal {
+  padding-left: 24px;
+  padding-right: 24px;
   position: relative;
   position: absolute;
   top: 50%;
@@ -599,12 +630,28 @@ backdrop
   fill: #e7e9fc;
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .close-btn:hover,
-.close-btn:focus {
+.backdrop .close-btn:hover,
+.backdrop .close-btn:focus {
   background-color: #404bbf;
-} */
+}
 
-/* .service-button:hover,
-.service-button:focus {
-  background-color: #404bbf; */
+.modal-text {
+  margin-top: 0;
+  padding-top: 72px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+}
+.form-items {
+  display: flex;
+  flex-direction: column;
+  /* gap: 8px; */
+
+  width: 360px;
+}
