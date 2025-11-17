@@ -542,6 +542,91 @@ footer
   background-color: #31d0aa;
 }
 
+.container-link {
+  margin-right: 80px;
+}
+
+.subscribe-text {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.subscribe-text {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+.subscribe-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  padding-left: 16px;
+  color: #fff;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-input:hover,
+.subscribe-input:focus {
+  border-color: #31d0aa;
+}
+.subscribe-input::placeholder {
+  color: #fff;
+}
+
+.subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  min-width: 165px;
+  height: 40px;
+  background: #4d5ae5;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: #31d0aa;
+}
+
+.subscribe-icon {
+  fill: #fff;
+  margin-left: 16px;
+}
+
 /*============
 end footer 
 =============*/
@@ -550,49 +635,31 @@ end footer
 backdrop
 =============*/
 
-/*============general backdrop styles=============*/
-label {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  margin-top: 8px;
-  margin-bottom: 4px;
+.input-container {
+  position: relative;
 }
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-input {
-  padding-left: 38px;
-  font-family: inherit;
-}
-textarea {
-  padding-top: 8px;
-  padding-left: 16px;
-  color: #8e8f99;
-  height: 120px;
-}
+
 textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
-/*============end general backdrop styles=============*/
 
 .backdrop {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(46, 47, 66, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .backdrop.is-open {
   opacity: 1;
   visibility: visible;
@@ -600,46 +667,62 @@ textarea::placeholder {
 }
 
 .modal {
-  padding-left: 24px;
-  padding-right: 24px;
-  position: relative;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  min-width: 408px;
   min-height: 584px;
+  margin: 0 auto;
+  padding: 72px 24px 24px 24px;
+  border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #fcfcfc;
-  border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .backdrop:not(.is-open) .modal {
   transform: translate(-50%, -50%) scale(1.5);
 }
 .close-btn {
+  display: block;
   position: absolute;
   top: 24px;
   right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  border: none;
-  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
   width: 24px;
   height: 24px;
-  fill: #e7e9fc;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #e7e9fc;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop .close-btn:hover,
 .backdrop .close-btn:focus {
   background-color: #404bbf;
+  border: none;
+}
+
+.icon-close {
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop .close-btn:hover .icon-close,
+.backdrop .close-btn:focus .icon-close {
+  fill: #ffffff;
 }
 
 .modal-text {
-  margin-top: 0;
-  padding-top: 72px;
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
@@ -648,10 +731,178 @@ textarea::placeholder {
   text-align: center;
   color: #2e2f42;
 }
-.form-items {
-  display: flex;
-  flex-direction: column;
-  /* gap: 8px; */
 
-  width: 360px;
+.modal-form {
 }
+
+.form-container {
+  margin-bottom: 8px;
+}
+.modal-user-info-label {
+  color: #8e8f99;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-user-info-label {
+  color: #8e8f99;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.modal-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-contact-input {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-contact-input:hover,
+.modal-contact-input:focus {
+  border-color: #4d5ae5;
+}
+
+.modal-contact-input:focus + .modal-icon {
+  fill: #4d5ae5;
+}
+
+.comment-container {
+  margin-bottom: 16px;
+}
+
+.user-commetn {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-commetn:hover,
+.user-commetn:focus {
+  border-color: #4d5ae5;
+}
+
+.input-container {
+  margin-bottom: 24px;
+}
+
+.checkbox {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  cursor: pointer;
+}
+
+.input-checkbox {
+}
+
+.checkbox:hover,
+.custom-checkbox {
+  border: 1px solid #404bbf;
+}
+
+.input-checkbox:checked + .checkbox > .custom-checkbox {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  margin-right: 8px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-link {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  color: #4d5ae5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-link:hover,
+.checkbox-link:focus {
+  color: #404bbf;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.send-button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  min-width: 169px;
+  height: 56px;
+  background: #4d5ae5;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.send-button:hover,
+.send-button:focus {
+  background-color: #404bbf;
+}
+
+/*============new backdrop styles=============*/

@@ -445,41 +445,117 @@
             </li>
           </ul>
         </div>
+        <div class="container-subscribe">
+          <p class="subscribe-text">Subscribe</p>
+          <form class="subscribe-form">
+            <label class="subscribe-label" for="email">
+              <input
+                class="subscribe-input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-mail"
+              />
+            </label>
+            <button class="subscribe-btn" type="submit">
+              Subscribe
+              <svg class="subscribe-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-subscribe"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
-
-    <div class="backdrop" data-modal>
+    <!--region backdrop-->
+    <div class="backdrop is-open" data-modal>
       <div class="modal">
-        <button class="close-btn" type="button" data-modal-close></button>
+        <button class="close-btn" type="button" data-modal-close>
+          <svg class="icon-close" width="8" height="8">
+            <use href="./images/icons.svg#icon-closeicon"></use>
+          </svg>
+        </button>
         <p class="modal-text">Leave your contacts and we will call you back</p>
-        <form>
-          <div class="form-items">
-            <label for="username">Name</label>
-            <input type="text" id="username" />
+        <form class="modal-form">
+          <div class="form-container">
+            <label class="modal-user-info-label" for="username">Name</label>
+            <div class="input-container">
+              <input
+                class="modal-contact-input"
+                type="text"
+                name="username"
+                id="username"
+              />
+              <svg class="modal-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-user"></use>
+              </svg>
+            </div>
           </div>
-          <div class="form-items">
-            <label for="usertel">Phone</label>
-            <input type="tel" id="usertel" />
+
+          <div class="form-container">
+            <label class="modal-user-info-label" for="usertel">Phone</label>
+            <div class="input-container">
+              <input
+                class="modal-contact-input"
+                type="tel"
+                name="usertel"
+                id="usertel"
+              />
+              <svg class="modal-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
           </div>
-          <div class="form-items">
-            <label for="useremail">Email</label>
-            <input type="email" id="useremail" />
+
+          <div class="form-container">
+            <label class="modal-user-info-label" for="usermail">Email</label>
+            <div class="input-container">
+              <input
+                class="modal-contact-input"
+                type="email"
+                name="usermail"
+                id="usermail"
+              />
+              <svg class="modal-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
           </div>
-          <div class="form-items">
-            <label for="usercomm">Comment</label>
-            <textarea placeholder="Text input" id="usercomm"></textarea>
+
+          <div class="comment-container">
+            <label class="modal-user-info-label" for="usercomm">Comment</label>
+            <textarea
+              class="user-commetn"
+              name="usercomm"
+              id="usercomm"
+              rows="5"
+              placeholder="Text input"
+            ></textarea>
           </div>
-          <div class="form-items">
-            <input type="checkbox" />
-            <label span
-              >I accept the terms and conditions of the
-              <a href="">Privacy Policy</a>
+
+          <div class="input-container">
+            <input
+              class="input-checkbox visually-hidden"
+              type="checkbox"
+              value=""
+              name="user-agree"
+              id="user-agree"
+            />
+            <label class="checkbox" for="user-agree">
+              <span class="custom-checkbox">
+                <svg class="checkbox-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="checkbox-link" href="">Privacy Policy</a>
             </label>
           </div>
-          <button class="service-button" type="submit">Send</button>
+          <button class="send-button" type="submit">Send</button>
         </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <!--region backdrop-->
   </body>
 </html>
